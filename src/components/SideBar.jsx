@@ -11,6 +11,9 @@ export default function SideBar() {
             ohws oghos hgoshoughv osh
           </p>
         </div>
+        <button>
+          <i className="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
     </div>
   );
