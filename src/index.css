@@ -115,6 +115,12 @@ footer button:hover {
   border: none;
   outline: none;
   margin-right: auto;
+  cursor: pointer;
+  transition-duration: 200ms;
+  padding: 1rem;
+}
+.sidebarContents button:hover{
+  opacity: 0.7;
 }
 
 /* ------- Desktop display ------- */

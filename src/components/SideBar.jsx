@@ -1,7 +1,9 @@
-export default function SideBar() {
+export default function SideBar(props) {
+
+  const {handleToggleModel} = props
   return (
     <div className="sidebar">
-      <div className="bgOverlay"></div>
+      <div onClick={handleToggleModel} className="bgOverlay"></div>
       <div className="sidebarContents">
         <h2>The Brutal Martial landscape</h2>
         <div>
@@ -12,7 +14,7 @@ export default function SideBar() {
           </p>
         </div>
         <button>
-          <i className="fa-solid fa-arrow-right"></i>
+          <i onClick={handleToggleModel} className="fa-solid fa-arrow-right"></i>
         </button>
       </div>
     </div>
