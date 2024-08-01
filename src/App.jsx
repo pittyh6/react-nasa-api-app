@@ -4,7 +4,8 @@ import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
-  
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(false)
   const [showModal, setShowModel] = useState(false);
 
   function handleToggleModel(){
@@ -17,8 +18,9 @@ function App() {
       const url = "https://api.nasa.gov/planetary/apod" + `?api_key=${NASA_KEY}`
       try{
         const res = await fetch(url)
-        const data = await res.json()
-        console.log('DATA\n', data)
+        const apiData = await res.json()
+        setData(apiData)
+        console.log('DATA\n', apiData)
       }catch{
         console.log(err.message)
       }
@@ -27,7 +29,10 @@ function App() {
   }, [])
   return (
     <>
-      <Main />
+      {data? (<Main />):
+      <div className="loadingState">
+          <i className="fa-solid fa-gear"></i>
+      </div>}
       {showModal && <SideBar handleToggleModel={handleToggleModel} />}
       <Footer handleToggleModel={handleToggleModel} />
     </>
