@@ -25,11 +25,11 @@ function App() {
         console.log(err.message)
       }
     }
-    fetchAPIData()
+    //fetchAPIData()
   }, [])
   return (
     <>
-      {data? (<Main />):
+      {data ? (<Main />):
       <div className="loadingState">
           <i className="fa-solid fa-gear"></i>
       </div>}
