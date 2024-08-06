@@ -25,7 +25,7 @@ function App() {
         console.log(err.message)
       }
     }
-    //fetchAPIData()
+    fetchAPIData()
   }, [])
   return (
     <>
@@ -33,8 +33,8 @@ function App() {
       <div className="loadingState">
           <i className="fa-solid fa-gear"></i>
       </div>}
-      {showModal && <SideBar handleToggleModel={handleToggleModel} />}
-      <Footer handleToggleModel={handleToggleModel} />
+      {showModal && <SideBar data={data} handleToggleModel={handleToggleModel} />}
+      {date && (<Footer data={data} handleToggleModel={handleToggleModel} />)}
     </>
   );
 }
