@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 export default function Footer(props) {
-  const {showModel, handleToggleModel, data} = props
+  console.log("props in footer", props);
+  const { showModel, handleToggleModel, data } = props;
   return (
     <footer>
       <div className="bgGradient"></div>
@@ -9,8 +10,8 @@ export default function Footer(props) {
         <h1>APOD PROJECT</h1>
         <h2>{data?.title}</h2>
       </div>
-      <button onClick={handleToggleModel}> 
-        <i class="fa-solid fa-circle-info"></i>
+      <button onClick={handleToggleModel}>
+        <i className="fa-solid fa-circle-info"></i>
       </button>
     </footer>
   );
