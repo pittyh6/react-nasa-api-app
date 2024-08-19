@@ -19,9 +19,9 @@ function App() {
         "https://api.nasa.gov/planetary/apod" + `?api_key=${NASA_KEY}`;
 
       const today = new Date().toDateString();
-      const localkey = `NASA-${today}`;
-      if (localStorage.getItem(localkey)) {
-        const apiData = JSON.parse(localStorage.getItem(localkey));
+      const localKey = `NASA-${today}`;
+      if (localStorage.getItem(localKey)) {
+        const apiData = JSON.parse(localStorage.getItem(localKey));
         setData(apiData);
         console.log("Fetched from cache today");
         return;
@@ -31,7 +31,7 @@ function App() {
       try {
         const res = await fetch(url);
         const apiData = await res.json();
-        localStorage.setItem(localkey, JSON.stringify(apiData));
+        localStorage.setItem(localKey, JSON.stringify(apiData));
         setData(apiData);
         console.log("Fetched from API today");
       } catch {
